@@ -6,6 +6,6 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.127.235
+IP-адрес 158.160.35.223
 
-Backend https://api.mesto.tulupova.nomoredomainsrocks.ru
+Backend https://api.movies.tulupova.nomoredomainsrocks.ru
