@@ -54,14 +54,19 @@ module.exports.getCurrentUser = (req, res, next) => {
 };
 
 module.exports.updateUserProfile = (req, res, next) => {
-  const newName = req.body.name;
-  const newEmail = req.body.email;
+  const { _id } = req.user;
+  const { email, name } = req.body;
 
   User.findByIdAndUpdate(
-    req.user._id,
-    { name: newName },
-    { email: newEmail },
-    { new: true, runValidators: true },
+    _id,
+    {
+      email,
+      name,
+    },
+    {
+      new: true,
+      runValidators: true,
+    },
   )
     .then((user) => {
       if (!user) {
@@ -109,4 +114,11 @@ module.exports.login = (req, res, next) => {
         .catch(next);
     })
     .catch(next);
+};
+
+module.exports.signout = (req, res) => {
+  res.clearCookie('jwt', {
+    sameSite: 'none',
+    secure: true,
+  }).send({});
 };
