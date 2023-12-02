@@ -22,7 +22,8 @@
   "scripts": {
     "start": "node app.js",
     "dev": "set DEBUG=express:* & nodemon app.js",
-    "lint": "npx eslint ."
+    "lint": "npx eslint .",
+    "deploy": "scp -r ./* admin@178.154.200.37:/home/admin/movies-explorer-api"
   },
   "devDependencies": {
     "eslint": "^8.52.0",

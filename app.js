@@ -9,12 +9,11 @@ const limiter = require('./middlewares/rateLimiter');
 
 const errorHandler = require('./middlewares/errorHandler');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
-const { DB_URL } = require('./codes/codes');
 
 const router = require('./routes/index');
 
 // Слушаем 3000 порт
-const { PORT = 3000 } = process.env;
+const { PORT = 3000, DB_URL } = process.env;
 
 const app = express();
 
