@@ -2,7 +2,7 @@ const { celebrate, Joi } = require('celebrate');
 
 const regex = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/;
 
-const validateCreateUser = celebrate({
+/* const validateCreateUser = celebrate({
   body: Joi.object().keys({
     name: Joi.string().min(2).max(30).required(),
     email: Joi.string().email().required(),
@@ -15,7 +15,7 @@ const validateLogin = celebrate({
     email: Joi.string().required().email(),
     password: Joi.string().required(),
   }),
-});
+}); */
 
 const validateUserId = celebrate({
   params: Joi.object().keys({
@@ -53,8 +53,8 @@ const validateMovieId = celebrate({
 });
 
 module.exports = {
-  validateCreateUser,
-  validateLogin,
+  // validateCreateUser,
+  // validateLogin,
   validateUserId,
   validateUpdateUserProfile,
   validateCreateMovie,
